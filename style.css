@@ -1,0 +1,1516 @@
+/* * {
+    border: 1px solid red;
+} */
+
+/* #region Allgemein */
+.favicon {
+  filter: invert();
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2em;
+
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+h2 {
+  margin: 0;
+  padding: 35px 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.background_grey {
+  background-color: #efefef;
+}
+
+.allg_content {
+  margin: 0 10vw;
+  padding-bottom: 50px;
+}
+
+.height {
+  height: 400px;
+}
+
+.form_font {
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.button {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  width: 250px;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  background: #008000;
+  padding: 15px;
+  border: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #009100;
+}
+
+nav li {
+  list-style: none;
+}
+
+/* #endregion */
+
+/* #region header */
+header {
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.header_content nav {
+  white-space: nowrap;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  margin: 20px 0;
+  max-height: 80px;
+  height: 100%;
+  width: 80%;
+  object-fit: contain;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.header_cutline {
+  background: #008000;
+  width: 2px;
+  height: 30px;
+  margin: 5px 10px;
+  filter: blur(1px);
+}
+
+header nav {
+  display: flex;
+  align-items: end;
+}
+
+.animated_header_nav {
+  position: relative;
+}
+
+.animated_header_nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 4px;
+  background-color: green;
+  transition: width 125ms;
+}
+
+.animated_header_nav:hover::after {
+  width: 100%;
+}
+
+.normal-nav-link {
+  filter: none !important;
+}
+
+header nav a {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #787374;
+  font-weight: bold;
+}
+
+/* #region Dropdown Nav */
+.dropdown {
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 250px;
+  padding: 25px 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  z-index: 999;
+  /* Hoher Z-Index, um das Dropdown-Menü über anderen Elementen zu platzieren */
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
+}
+
+.dropdown-menu a {
+  border-radius: 5px;
+  padding: 4px;
+  background-color: #efefef;
+}
+
+.dropdown-menu li {
+  margin-bottom: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f6f6f6;
+}
+
+/* #endregion Dropdown Nav */
+
+/* #region MEIN BURGER MENÜ */
+.container {
+  display: none;
+}
+
+.popover {
+  display: none;
+  /* box-shadow: 0px 6px 8px rgba(19, 19, 19, .7); */
+}
+
+.popover:target {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popover .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 0;
+  height: 0;
+  color: #fff;
+  background-color: #191919;
+  animation: 1s grow ease forwards;
+  text-align: center;
+  z-index: 998;
+  border-radius: 10px;
+}
+
+.nav_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav_list a {
+  text-decoration: none;
+  font-size: 2em;
+  color: #fff;
+}
+
+.nav_list_item {
+  height: 100%;
+  overflow: hidden;
+}
+
+.nav_list li {
+  padding: 30px 0;
+  text-transform: uppercase;
+  transform: translateY(200px);
+  opacity: 0;
+  animation: 125ms slideUp ease forwards 0.5s;
+  position: relative;
+}
+
+.nav_list li::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: 10px;
+  background: #008000;
+  transition: all 0.5s ease;
+}
+
+.nav_list li:hover:before {
+  width: 100%;
+}
+
+.popover p {
+  padding: 50px;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 1s;
+}
+
+.popover .close::after {
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #008000;
+  color: #fff;
+  content: "×";
+  cursor: pointer;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 0.5s;
+  border-radius: 0 10px 0 10px;
+}
+
+@keyframes grow {
+  100% {
+    height: 90%;
+    width: 90%;
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* #endregion MEIN BURGER MENÜ */
+
+/* #endregion */
+
+/* TODO #region ++Gruppen Seiten */
+/* #region +Startseite (MARK) */
+/* #region section 1 */
+.section_1_content {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.section_1 a img {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  aspect-ratio: 6/4;
+  object-fit: cover;
+}
+
+.section_1 a {
+  width: 40%;
+
+  cursor: pointer;
+}
+
+.section_1_right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 50px;
+}
+
+.section_1_right a {
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.section_1_right h2 {
+  text-align: start;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section_1 a img:hover {
+  transform: scale(1.1);
+  transition: transform 125ms;
+}
+
+/* #endregion */
+
+/* #region section 2 */
+.section_2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section_2_content {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.section_2 span {
+  font-weight: bold;
+}
+
+.section_2_imgAndText {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.section_2_imgAndText img {
+  max-height: 200px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.section_2_img {
+  /* box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.8); */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  max-height: 200px;
+}
+
+.section_2_img img:hover {
+  transform: scale(1.1);
+  transition: transform 125ms;
+}
+
+/* #endregion */
+
+/* #region section 3 */
+.section_3 {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  max-height: 400px;
+}
+
+.section_3_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section_3 p {
+  width: 100%;
+  flex: 1;
+  margin-bottom: 50px;
+}
+
+.section_3 img {
+  height: 200px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  margin-left: 50px;
+}
+
+/* #endregion */
+/* #endregion */
+
+/* #region +Kochseite (TAYFUN) */
+/* #region section 1 atf */
+.section_1_kochseite {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.section_1_kochseite h1 {
+  text-align: center;
+  color: white;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 8em;
+  margin: 0;
+  background-image: url(img/gesund3.webp);
+  background-position: center;
+  height: 300px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+/* #endregion */
+
+/* #region section 2 interview */
+.section_2_kochseite {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section_2_kochseite_imgAndText {
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.section_2_kochseite p {
+  color: #ffffff;
+  background-color: #008000;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section_2_kochseite img {
+  height: 250px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.section_2_kochseite ol {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-right: 30px;
+  background-color: #008000;
+  line-height: 1.5;
+  border-radius: 10px;
+  padding: 30px;
+  padding-left: 60px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  color: white;
+}
+
+/* #endregion */
+
+/* #region section 3 tipps */
+.section_3_kochseite {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.community {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.community_content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 200px;
+}
+
+.community_content img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.community_content span {
+  font-size: smaller;
+}
+
+/* #endregion */
+
+/* #region section 4 muffin */
+.section_4_kochseite {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.section_4_kochseite_rezept {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_4_kochseite img {
+  height: 400px;
+  width: 80%;
+  object-fit: cover;
+}
+
+.section_4_kochseite ul {
+  text-align: start;
+  width: 300px;
+  line-height: 1.5;
+  border-radius: 10px;
+  padding: 0 30px;
+  padding-top: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  background-color: white;
+  margin: 0;
+  margin-left: -100px;
+  padding-bottom: 10px;
+}
+
+.section_4_kochseite li {
+  padding: 2px;
+  padding-left: 5px;
+}
+
+.section_4_kochseite li:nth-child(odd) {
+  background-color: #efefef;
+  border-radius: 10px;
+}
+
+.section_4_kochseite_rezept h2 {
+  padding: 10px 0;
+}
+
+/* #endregion */
+
+/* #region section 5 rezept kontakt */
+.section_5_kochseite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+.section_5_kochseite h2 {
+  text-align: center;
+}
+
+.section_5_kochseite form {
+  align-items: center;
+}
+
+.section_5_kochseite_area {
+  width: 100%;
+}
+
+.section_5_kochseite input {
+  margin: 0;
+}
+
+.section_5_kochseite textarea {
+  height: 200px;
+  width: 100%;
+}
+
+.section_5_kochseite_textareas {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.section_5_kochseite_textareas span {
+  font-size: 80px;
+  color: #787374;
+}
+
+.section_5_kochseite button {
+  display: flex;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+.section_5_kochseite_button_pos {
+  display: flex;
+  justify-content: end;
+}
+
+/* #endregion */
+/* #endregion */
+
+/* TODO #endregion */
+
+/* #region ++Meine Seiten */
+/* #region Kontaktseite */
+
+.contact_content {
+  display: flex;
+  align-items: center;
+}
+
+/* #region Formular */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+form input {
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 125ms;
+}
+
+form input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+}
+
+form textarea {
+  margin: 25px 0;
+  height: 100px;
+  width: 220px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 125ms;
+}
+
+form textarea:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 50px rgba(0, 0, 0, 0.4),
+    -13px -13px 50px rgba(255, 255, 255, 0.4);
+}
+
+/* #endregion Formular */
+
+/* #region Gallery */
+.gallery {
+  --g: 8px;
+  /* the gap */
+  --s: 200px;
+  /* the size */
+
+  height: 200px;
+  display: grid;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+.gallery img {
+  grid-area: 1/1;
+  width: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x, 0), var(--_y, 0));
+  cursor: pointer;
+  z-index: 0;
+  transition: 125ms, z-index 0s 125ms;
+}
+
+.gallery img:hover {
+  --_i: 1;
+  z-index: 1;
+  transition: transform 125ms, clip-path 125ms 125ms, z-index 0s;
+}
+
+.gallery:hover img {
+  transform: translate(0, 0);
+}
+
+.gallery > img:nth-child(1) {
+  clip-path: polygon(
+    50% 50%,
+    calc(50% * var(--_i, 0)) calc(120% * var(--_i, 0)),
+    0 calc(100% * var(--_i, 0)),
+    0 0,
+    100% 0,
+    100% calc(100% * var(--_i, 0)),
+    calc(100% - 50% * var(--_i, 0)) calc(120% * var(--_i, 0))
+  );
+  --_y: calc(-1 * var(--g));
+}
+
+.gallery > img:nth-child(2) {
+  clip-path: polygon(
+    50% 50%,
+    calc(100% - 120% * var(--_i, 0)) calc(50% * var(--_i, 0)),
+    calc(100% - 100% * var(--_i, 0)) 0,
+    100% 0,
+    100% 100%,
+    calc(100% - 100% * var(--_i, 0)) 100%,
+    calc(100% - 120% * var(--_i, 0)) calc(100% - 50% * var(--_i, 0))
+  );
+  --_x: var(--g);
+}
+
+.gallery > img:nth-child(3) {
+  clip-path: polygon(
+    50% 50%,
+    calc(100% - 50% * var(--_i, 0)) calc(100% - 120% * var(--_i, 0)),
+    100% calc(100% - 120% * var(--_i, 0)),
+    100% 100%,
+    0 100%,
+    0 calc(100% - 100% * var(--_i, 0)),
+    calc(50% * var(--_i, 0)) calc(100% - 120% * var(--_i, 0))
+  );
+  --_y: var(--g);
+}
+
+.gallery > img:nth-child(4) {
+  clip-path: polygon(
+    50% 50%,
+    calc(120% * var(--_i, 0)) calc(50% * var(--_i, 0)),
+    calc(100% * var(--_i, 0)) 0,
+    0 0,
+    0 100%,
+    calc(100% * var(--_i, 0)) 100%,
+    calc(120% * var(--_i, 0)) calc(100% - 50% * var(--_i, 0))
+  );
+  --_x: calc(-1 * var(--g));
+}
+
+/* #endregion Gallery */
+
+/* #endregion */
+
+/* #region Success */
+.success {
+  height: 400px;
+  margin: 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.waviy {
+  position: relative;
+  display: flex;
+  margin: 50px 0;
+}
+
+.waviy div {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 0 10px;
+  width: 100%;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.waviy span {
+  color: #008000;
+  text-transform: uppercase;
+  animation: waviy 5s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(-20px);
+  }
+}
+
+/* #endregion */
+
+/* #region Impressum */
+.impressum_section_1 h1 {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.section_background_grey {
+  background: #efefef;
+}
+
+.impressum h2 {
+  padding: 10px 0;
+  text-align: start;
+}
+
+.impressum_content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.green_links a {
+  color: #008000;
+  text-decoration: underline;
+}
+
+.impressum_quelle {
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+/* #endregion */
+
+/* #region Datenschutz */
+.datenschutz h2 {
+  text-align: start;
+}
+
+.datenschutz {
+  overflow-wrap: break-word;
+}
+
+/* #endregion Datenschutz */
+
+/* #endregion Meine Seiten */
+
+/* #region footer */
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #403b3b;
+}
+
+.footer_content {
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.footer_left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.footer_left img {
+  max-height: 80px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  margin: 20px 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.footer_cutline {
+  background: white;
+  width: 1px;
+  height: 200px;
+  margin: 50px 10px;
+  margin-left: 40px;
+  filter: drop-shadow(2px 0px 8px white);
+}
+
+.footer_right {
+  display: flex;
+  align-items: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+footer a:hover {
+  filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.9));
+}
+
+.footer_logos {
+  display: flex;
+}
+
+.footer_logos img {
+  height: 40px;
+  display: flex;
+  margin-left: 25px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+
+/* #endregion */
+
+@media (max-width: 1024px) {
+  /* * #region Allgemein */
+
+  h2 {
+    padding: 20px 0;
+  }
+
+  .contact h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .height {
+    height: 100%;
+  }
+
+  .button {
+    display: flex;
+    font-size: large;
+    width: 250px;
+    padding: 15px;
+    margin-right: 0;
+  }
+
+  /* * #endregion */
+
+  /* #region header */
+  .header_content {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  header nav {
+    display: flex;
+    align-items: end;
+  }
+
+  header nav a {
+    margin: 20px 5px;
+    margin-bottom: 0;
+  }
+
+  .header_cutline {
+    margin-left: 5px;
+    margin-bottom: -6px;
+  }
+
+  /* Dropdown Nav */
+  .dropdown {
+    margin-bottom: 0;
+  }
+
+  /* #endregion */
+
+  /* TODO #region ++Gruppen Seiten */
+  /* #region +Startseite */
+  /* #region section 1 */
+  .section_1_content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section_1_content a img {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    min-height: auto;
+    min-width: 0;
+    height: 200px;
+  }
+  .section_1 a {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    min-width: 0;
+  }
+
+  .section_1_right {
+    margin: 0;
+    align-items: center;
+  }
+
+  .section_1 a {
+    margin-top: 2%;
+    justify-content: center;
+  }
+
+  /* #endregion */
+
+  /* #region section 2 */
+  .section_2_content {
+    gap: 50px;
+  }
+
+  .section_2 img {
+    min-width: 100px;
+  }
+
+  .section_2_imgAndText {
+    margin: 0;
+  }
+
+  /* #endregion */
+
+  /* #region section 3 */
+  .section_3 {
+    text-align: center;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .section_3_content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .section_3 img {
+    margin: 0;
+    min-height: 0;
+    height: 200px;
+    width: 100%;
+  }
+
+  /* #endregion */
+  /* #endregion */
+  /* #region +Kochtipps */
+  /* #region section 1 */
+  .section_1_kochseite h1 {
+    font-size: 6em;
+  }
+
+  /* #endregion section 1 */
+  /* #endregion Kochtipps */
+  /* TODO #endregion */
+
+  /* #region ++Meine Seiten */
+  /* #region Success */
+  .success {
+    margin: 0 150px;
+  }
+
+  .waviy {
+    flex-direction: column;
+  }
+
+  .waviy div {
+    margin: 20px 0;
+  }
+
+  /* #endregion */
+
+  /* #region Impressum */
+  .impressum {
+    text-align: center;
+  }
+
+  .impressum h2 {
+    text-align: center;
+  }
+
+  .impressum_section_1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .impressum_section_1 h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .impressum_section_2_content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .impressum_section_2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .impressum_section_3 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .impressum_quelle {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* #endregion */
+  /* #endregion */
+
+  /* #region footer */
+  .footer_content {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .footer_left {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .footer_logos img {
+    height: 50px;
+    margin: 0 10px;
+  }
+
+  .footer_cutline {
+    display: none;
+  }
+
+  .footer_right {
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+
+  footer nav {
+    flex-direction: row;
+  }
+
+  footer nav a {
+    margin: 20px 5px;
+  }
+
+  #footer-logo {
+    filter: invert();
+  }
+
+  .copyright {
+    font-size: smaller;
+    margin: 0;
+    width: -webkit-fill-available;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* #endregion */
+}
+
+@media (max-width: 768px) {
+  /* * #region Allgemein */
+
+  .button {
+    font-size: larger;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* * #endregion */
+
+  /* #region header */
+  .header_logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 10px;
+  }
+
+  .header_cutline {
+    display: none;
+  }
+
+  header nav a {
+    display: none;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #787374;
+    font-weight: bold;
+  }
+
+  header nav a:hover {
+    padding: 0 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #008000;
+    border-bottom: 0;
+    border-left: 2px solid #008000;
+    border-right: 2px solid #008000;
+    transition: 125ms;
+  }
+
+  .animated_header_nav::after {
+    display: none;
+  }
+
+  /* #region Dropdown Nav */
+  .dropdown {
+    margin: 10px 0;
+  }
+
+  /* #endregion dropdown nav */
+
+  /* #region Burger Menü */
+  #mobile-menu {
+    z-index: 998;
+  }
+
+  #mobile-menu-btn {
+    display: inline;
+  }
+
+  /* #endregion burger menü */
+
+  /* #endregion */
+
+  /* TODO #region ++Gruppen Seiten */
+  /* #region +Kochseite */
+  /* #region section 1 atf */
+  .section_1_kochseite h1 {
+    font-size: 3em;
+  }
+
+  /* #endregion section 1 */
+
+  /* #region section 2 in terview */
+  .section_2_kochseite img {
+    height: 120px;
+  }
+
+  /* #endregion section 2 in terview */
+
+  /* #region section 3 tipps */
+  .community {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  /* #endregion section 3 tipps */
+
+  /* #region section 4 muffin */
+  .section_4_kochseite_rezept {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section_4_kochseite_rezept img {
+    height: 200px;
+    aspect-ratio: 1/1;
+    flex: 1;
+  }
+
+  .section_4_kochseite_rezept ul {
+    margin-left: 0;
+    margin-top: -50px;
+    width: 250px;
+  }
+
+  /* #endregion */
+
+  /* #region section 5 rezept kontakt */
+  .section_5_kochseite_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section_5_kochseite_input_pos {
+    width: fit-content;
+  }
+
+  /* #endregion section 5 rezept kontakt */
+
+  /* #endregion */
+  /* #region +Startseite */
+  /* #region section 2 */
+  .section_2_content {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* #endregion section 2 */
+
+  /* #region section 3 */
+  .section_3_content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section_3 img {
+    display: none;
+  }
+
+  /* #endregion section 3 */
+
+  /* #region Success */
+  .waviy div {
+    font-size: 30px;
+  }
+
+  /* #endregion */
+
+  /* #endregion */
+
+  /* #region kontakt */
+  .contact_content {
+    flex-direction: column;
+  }
+
+  .gallery {
+    margin: 0;
+  }
+
+  form input {
+    width: 150px;
+  }
+
+  .contact h1 {
+    text-align: center;
+  }
+
+  form {
+    align-items: center;
+  }
+
+  /* #endregion kontakt */
+
+  /* #region footer */
+  .footer_content {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .footer_left {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .footer_left img {
+    height: 60px;
+  }
+
+  .footer_cutline {
+    display: none;
+  }
+
+  .footer_right {
+    flex-direction: column;
+  }
+
+  .footer_logos img {
+    height: 25px;
+  }
+
+  footer nav {
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  footer nav a {
+    margin: 5px 0;
+  }
+
+  .copyright {
+    margin: auto;
+    padding-top: 10px;
+  }
+
+  /* #endregion */
+}
+
+@media (max-width: 320px) {
+  .allg_content {
+    margin: 0;
+  }
+
+  /* burger menü */
+  .nav_list a {
+    font-size: 1em;
+  }
+
+  /* Success */
+  .waviy div {
+    font-size: 25px;
+  }
+
+  /* header */
+  .header_logo {
+    display: none;
+  }
+
+  /* footer */
+  .footer_left {
+    display: none;
+  }
+
+  .footer_right {
+    margin-top: 50px;
+  }
+}

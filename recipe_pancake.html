@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recipe.css" />
+  <script src="pageHandler.class.js"></script>
+
+  <title>American Pancake</title>
+  <link
+  class="favicon-phone"
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="./favicon/dark/apple-touch-icon.png"
+/>
+<link
+  class="favicon"
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="./favicon/dark/favicon.ico"
+/></head>
+
+<body>
+  <header w3-include-html="./templates/header.html"></header>
+  <main class="allg_content">
+    <section class="header-section">
+      <h1 id="recipe-title">American Pancakes</h1>
+      <img class="header-section-img" src="img/pancake.webp" alt="American Pancakes" />
+      <div class="recipe-infos">
+        <span class="time"><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          15 min</span>
+        <span class="difficulty"><img class="small-inline-icons" src="img/icons/brain-solid.svg" alt="Brain icon" />
+          simple</span>
+        <span class="createdAt"><img class="small-inline-icons" src="img/icons/calendar-alt-regular.svg"
+            alt="Calendar Icon" />
+          <span>25.05.2023</span>
+        </span>
+      </div>
+    </section>
+    <section class="recipe-section">
+      <div class="calculatePart">
+        <span>Zutaten für </span>
+        <input type="number" value="4" min="1" max="100" id="ingredientsAmount" />
+        <button onclick="init();">Portionen</button>
+      </div>
+      <div class="ingredientsPart">
+        <ul id="ingredientList"></ul>
+      </div>
+    </section>
+    <section class="preparation-section">
+      <h2>Zubereitung</h2>
+      <div class="recipe-infos">
+        <span><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          ca. 15 min</span>
+        <span><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          Gesamtzeit ca. 15 min</span>
+      </div>
+      <p>
+      <h3>Schritt 1</h3>
+      Das Mehl mit dem Zucker, Backpulver und Salz vermischen. Eier und
+      Milch hinzugeben und alles zu einem glatten Teig verrühren. Etwas Öl
+      in eine Pfanne geben und auf mittlerer Stufe erhitzen. Je 2 EL Teig in
+      die Pfanne geben. Die Pancakes sollten etwa einen Durchmesser von ca.
+      10 cm haben.
+      </p>
+      <h3>Schritt 2</h3>
+      Jeden Pancake ca. 2 Minuten ausbacken, bis sich kleine Bläschen bilden, dann wenden und von der anderen Seite
+      ebenfalls so lange ausbacken. American Pancakes mit Beeren und Ahornsirup garnieren und servieren.
+
+      <div class="creator">
+        <h3 class="created-title">Rezept erstellt von</h3>
+        <div class="creator-wrapper">
+          <img class="profile-picture" src="img/marcel.webp" alt="Profile Picture" />
+          <h3>Marcel</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer_scroll" w3-include-html="./templates/footer.html"></div>
+
+
+  <script src="recipe.js"></script>
+</body>
+
+</html>

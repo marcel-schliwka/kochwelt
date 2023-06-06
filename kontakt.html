@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kontakt</title>
+
+  <script src="pageHandler.class.js"></script>
+
+  <link rel="stylesheet" href="font.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link class="favicon-phone" rel="apple-touch-icon" sizes="180x180" href="./favicon/dark/apple-touch-icon.png" />
+  <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="./favicon/dark/favicon.ico" />
+</head>
+
+<body>
+  <div w3-include-html="templates/header.html"></div>
+
+  <main>
+    <div class="contact allg_content">
+      <h1>KONTAKT</h1>
+      <div class="contact_content">
+        <form action="https://gruppe-564.developerakademie.net/kochwelt-gruppenarbeit/send_mail.php" method="POST">
+          <input class="form_font" name="name" placeholder="Dein Name" minlength="1" maxlength="50" required />
+          <textarea class="form_font" name="message" placeholder="Deine Nachricht an uns" minlength="1" maxlength="5000"
+            required></textarea>
+          <button class="button" type="submit">Mail senden</button>
+        </form>
+        <div class="gallery">
+          <img src="./img/andino.webp" alt="Andino" />
+          <img src="./img/marcel.webp" alt="Marcel" />
+          <img src="./img/tayfun.webp" alt="Tayfun" />
+          <img src="./img/mark.webp" alt="Mark" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer_scroll" w3-include-html="templates/footer.html"></div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recipe.css" />
+  <script src="pageHandler.class.js"></script>
+  <title>Vegetarische Königsberger Klopse</title>
+  <link
+  class="favicon-phone"
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="./favicon/dark/apple-touch-icon.png"
+/>
+<link
+  class="favicon"
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="./favicon/dark/favicon.ico"
+/>
+</head>
+
+<body>
+  <header w3-include-html="./templates/header.html"></header>
+  <main class="allg_content">
+    <section class="header-section">
+      <h1 id="recipe-title">Vegetarische Königsberger Klopse</h1>
+      <img class="header-section-img" src="img/vegetarische-klopse.webp" alt="Vegetarische Königsberger Klopse" />
+      <div class="recipe-infos">
+        <span class="time"><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          60 min</span>
+        <span class="difficulty"><img class="small-inline-icons" src="img/icons/brain-solid.svg" alt="Brain icon" />
+          simple</span>
+        <span class="createdAt"><img class="small-inline-icons" src="img/icons/calendar-alt-regular.svg"
+            alt="Calendar Icon" />
+          <span>26.05.2023</span>
+        </span>
+      </div>
+    </section>
+    <section class="recipe-section">
+      <div class="calculatePart">
+        <span>Zutaten für </span>
+        <input type="number" value="4" min="1" max="100" id="ingredientsAmount" />
+        <button onclick="init();">Portionen</button>
+      </div>
+      <div class="ingredientsPart">
+        <ul id="ingredientList"></ul>
+      </div>
+    </section>
+    <section class="preparation-section">
+      <h2>Zubereitung</h2>
+      <div class="recipe-infos">
+        <span><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          ca. 60 min</span>
+        <span><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          Gesamtzeit ca. 60 min</span>
+      </div>
+      <p>
+      <h3>Schritt 1</h3>
+      Zwiebel schälen und fein würfeln. Petersilie waschen, trocken schütteln und, bis auf ein paar Blättchen zum
+      Garnieren, fein hacken. Kapern abtropfen lassen, dabei 4 EL Flüssigkeit auffangen. Kapern, bis auf 2 EL, fein
+      hacken. 1/2 EL Öl in einer kleinen Pfanne erhitzen. Zwiebel darin 1–2 Minuten andünsten. Tofu fein zerbröseln.
+      Zwiebel in eine Schüssel geben und mit Eiern, 3 TL Senf, gehackter Petersilie, Semmelbrösel, Quark, Tofu,
+      gehackten Kapern und 2 EL Kapernflüssigkeit verkneten. Mit Salz und Pfeffer abschmecken. Aus der Masse 12 Klopse
+      formen. 2 EL Öl in einer großen beschichteten Pfanne erhitzen. Klopse darin in 2 Portionen unter Wenden ca. 4
+      Minuten braten. Auf Küchenpapier abtropfen lassen
+      </p>
+      <h3>Schritt 2</h3>
+      Kartoffeln schälen, waschen und in kochendem Salzwasser ca. 20 Minuten garen.
+      <h3>Schritt 3</h3>
+      Inzwischen 4 EL Butter in einem großen Topf schmelzen. Mehl unter Rühren zugeben. Schaumig aufkochen lassen. Mit
+      Wein und Brühe ablöschen. Worcestershiresauce, 1 TL Senf, 2 EL Kapernwasser und 1 EL Zitronensaft zugeben. Mit
+      Salz und Pfeffer würzen. Ca. 5 Minuten köcheln lassen. Sahne und restliche Kapern zugeben. Mit Salz, Zucker,
+      Muskat und Zitronensaft abschmecken. Klopse in die Soße geben. Weitere 15–20 Minuten bei schwacher Hitze ziehen
+      lassen.
+      <h3>Schritt 4</h3>
+      In der Zwischenzeit Mandeln in einer Pfanne ohne Fett goldbraun rösten. Auf einem flachen Teller abkühlen lassen.
+      Kartoffeln abgießen. Milch, 1 EL Butter und 30 g Mandeln aufkochen. Kartoffeln in der heißen Milch fein
+      zerstampfen. Mit Salz und Muskat abschmecken.
+      <h3>Schritt 5</h3>
+      2 EL Butter in einem kleinen Topf schaumig aufkochen lassen. Restliche Mandeln zugeben. Topf vom Herd nehmen.
+      Klopse mit Kapernsoße und Kartoffelpüree auf Tellern anrichten. Mit Petersilie garnieren. Püree mit Mandelbutter
+      beträufeln.
+      <div class="creator">
+        <h3 class="created-title">Rezept erstellt von</h3>
+        <div class="creator-wrapper">
+          <img class="profile-picture" src="img/mark.webp" alt="Profile Picture" />
+          <h3>Mark</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer_scroll" w3-include-html="./templates/footer.html"></div>
+
+  <script src="recipe.js"></script>
+</body>
+
+</html>

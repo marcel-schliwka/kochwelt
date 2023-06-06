@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font-family: 'Raleway', sans-serif; -->
+
+    <link rel="stylesheet" href="font.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Kochwelt</title>
+    <link
+      class="favicon-phone"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/dark/apple-touch-icon.png"
+    />
+    <link
+      class="favicon"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/dark/favicon.ico"
+    />
+
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script src="pageHandler.class.js"></script>
+  </head>
+
+  <body>
+    <div w3-include-html="templates/header.html"></div>
+    <!-- SECTION 1 Rezept des Tages -->
+    <main>
+      <section class="section_1 height">
+        <div class="section_1_content allg_content">
+          <a href="recipe_klopse.html"
+            ><img src="img/vegetarische-klopse.webp"
+          /></a>
+          <div class="section_1_right">
+            <h2>Vegetarische Königsberger Klopse</h2>
+            <p>
+              Was sich hier als Hackfleischklops in cremiger Kapernsoße ausgibt,
+              ist eigentlich ein würziger Quarkknödel! Dazu gibt's ganz
+              klassisch Kartoffelbrei und und einen knackigen Salat. Wer schon
+              Omas "Saure Klopse" liebte, sollte sich diesen
+              Hausmannskost-Klassiker auf vegetarische Art nicht entgehen
+              lassen.
+            </p>
+            <a class="button" href="recipe_klopse.html">Rezept öffnen</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2 Rezepte -->
+      <section class="section_2 background_grey height">
+        <h2>Lust auf was Neues?</h2>
+        <div class="allg_content">
+          <div class="section_2_content">
+            <a href="recipe_erbsensuppe.html" class="section_2_imgAndText">
+              <div class="section_2_img">
+                <img src="img/pea-soup.webp" alt="" />
+              </div>
+              <span>Erbsen Suppe</span>
+            </a>
+            <a href="recipe_pancake.html" class="section_2_imgAndText">
+              <div class="section_2_img">
+                <img src="img/pancake.webp" alt="" />
+              </div>
+              <span>American Pancakes</span>
+            </a>
+            <a href="recipe_muffin.html" class="section_2_imgAndText">
+              <div class="section_2_img">
+                <img src="img/muffin.webp" alt="" />
+              </div>
+              <span>Muffin</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 3 WOK -->
+      <section class="section_3 height">
+        <h2>Pfanne vs. Wok - Was ist besser?</h2>
+        <div class="section_3_content allg_content">
+          <p>
+            Pfannen und Woks sind zwei der am häufigsten verwendeten
+            Kochutensilien in der Küche. Beide sind in der Lage, eine Vielzahl
+            von Gerichten zu kochen, aber es gibt einige Unterschiede zwischen
+            ihnen. Eine Pfanne ist besser geeignet für das Braten von
+            Lebensmitteln wie Fleisch, Fisch oder Gemüse. Woks hingegen eignen
+            sich hervorragend für die Zubereitung von asiatischen Gerichten, da
+            sie eine höhere Hitze vertragen und eine größere Oberfläche zum
+            Rühren haben. Beide haben ihre Vor- und Nachteile, aber letztendlich
+            hängt die Wahl davon ab, welche Art von Gerichten man kochen möchte
+            und welche Kochmethoden bevorzugt werden.
+          </p>
+          <img src="img/wok.webp" alt="Wok" />
+        </div>
+      </section>
+    </main>
+
+    <div id="footer_scroll" w3-include-html="templates/footer.html"></div>
+  </body>
+</html>

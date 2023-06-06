@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recipe.css" />
+  <script src="pageHandler.class.js"></script>
+
+  <title>Erbsensuppe</title>
+  <link
+  class="favicon-phone"
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="./favicon/dark/apple-touch-icon.png"
+/>
+<link
+  class="favicon"
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="./favicon/dark/favicon.ico"
+/>
+</head>
+
+<body>
+  <header w3-include-html="./templates/header.html"></header>
+
+  <main class="allg_content">
+
+    <section class="header-section">
+      <h1 id="recipe-title">Erbsen-Minze-Suppe</h1>
+      <img class="header-section-img" src="img/pea-soup.webp" alt="Erbsen-Minze-Suppe" />
+      <div class="recipe-infos">
+        <span class="time"><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          25 min</span>
+        <span class="difficulty"><img class="small-inline-icons" src="img/icons/brain-solid.svg" alt="Brain icon" />
+          simple</span>
+        <span class="createdAt"><img class="small-inline-icons" src="img/icons/calendar-alt-regular.svg"
+            alt="Calendar Icon" />
+          <span>26.05.2023</span>
+        </span>
+      </div>
+    </section>
+
+    <section class="recipe-section">
+      <div class="calculatePart">
+        <span>Zutaten für </span>
+        <input type="number" value="4" min="1" max="100" id="ingredientsAmount" />
+        <button onclick="init();">Portionen</button>
+      </div>
+      <div class="ingredientsPart">
+        <ul id="ingredientList"></ul>
+      </div>
+    </section>
+
+    <section class="preparation-section">
+      <h2>Zubereitung</h2>
+      <div class="recipe-infos">
+        <span><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          ca. 15 min</span>
+        <span><img class="small-inline-icons" src="img/icons/clock-regular.svg" alt="Little Clock image" />
+          Gesamtzeit ca. 25 min</span>
+      </div>
+      <p>
+      <h3>Schritt 1</h3>
+      Kartoffeln schälen und grob würfeln. Zwiebeln und Knoblauch in Würfel schneiden und dann in Öl anschwitzen. Nun
+      die Kartoffelwürfel dazugeben und alles kurze Zeit anschwitzen. Die Erbsen hinzugeben und mit dem Gemüsefond
+      ablöschen. Das Ganze köcheln lassen, bis die Kartoffeln weich sind.
+      </p>
+      <h3>Schritt 2</h3>
+      <p>
+        Die gehackten Minzblätter hinzugeben und alles miteinander pürieren. Bei Bedarf die Suppe mit etwas Gemüsebrühe
+        oder Wasser verdünnen.
+
+        Die Suppe nach Belieben mit einem Klecks Joghurt servieren. Guten Appetit!
+        Wein-Empfehlung: Dazu passt ein trockener Riesling.
+
+        Profi-Tipp: Gemüsefond selbst herstellen aus Karotten, Sellerie, Zwiebeln, Lorbeerblatt, Piment, Wachholder,
+        Thymian, Rosmarin und Pfeffer. Alles zusammen in Wasser eine halbe Stunde simmern lassen. Fertig.
+      </p>
+
+      <div class="creator">
+        <h3 class="created-title">Rezept erstellt von</h3>
+        <div class="creator-wrapper">
+          <img class="profile-picture" src="img/andino.webp" alt="Profile Picture" />
+          <h3>Andino</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer_scroll" w3-include-html="./templates/footer.html"></div>
+
+
+  <script src="recipe.js"></script>
+</body>
+
+</html>
